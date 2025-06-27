@@ -10,4 +10,8 @@ pytesseract==0.3.10
 pdf2image==1.16.3
 Pillow==9.5.0
 PyMuPDF==1.26.1
-langchain-openai==0.0.2
+langchain-openai==0.0.17
+rich==14.0.0
+markdown-it-py==3.0.0
+pygments==2.19.2
+typing-extensions==4.14.0
