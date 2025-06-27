@@ -1,11 +1,11 @@
 import streamlit as st
 from dotenv import load_dotenv
 from langchain.text_splitter import CharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings   # Updated import
-from langchain.chat_models import ChatOpenAI               # Updated import
+from langchain_openai import OpenAIEmbeddings          # Correct import for embeddings
+from langchain_openai import ChatOpenAI                # Correct import for chat model
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
-from langchain.vectorstores import Chroma                   # Updated import
+from langchain_community.vectorstores import Chroma    # Correct import for vectorstore
 from htmlTemplates import css, bot_template, user_template
 
 import fitz  # PyMuPDF
@@ -80,7 +80,6 @@ def main():
     load_dotenv()
     st.set_page_config(page_title="Chat with PDFs", page_icon=":books:")
 
-    # Initialize session state keys
     if "conversation" not in st.session_state:
         st.session_state.conversation = None
     if "chat_history" not in st.session_state:
